@@ -3,17 +3,17 @@ import asyncio
 from telegram import Bot
 
 TOKEN = os.getenv("BOT_TOKEN")
-CHANNEL = "@RadarDeChollosES"
+
 
 async def main():
     bot = Bot(token=TOKEN)
 
-    await bot.send_message(
-        chat_id=CHANNEL,
-        text="📡 ¡Hola! Soy el bot de Radar de Chollos 🤖🔥\n\nPrueba de conexión realizada correctamente."
-    )
+    print("🤖 Radar de Chollos está funcionando correctamente.")
 
-    print("Mensaje enviado correctamente.")
+    # Mantener el proceso activo
+    while True:
+        await asyncio.sleep(60)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
